@@ -26,3 +26,4 @@ jobs:
         git add .
         git commit -m "Add bootloader script and other files"
         git push origin thort
+# Triggering the workflow
