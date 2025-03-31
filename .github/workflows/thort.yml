@@ -14,7 +14,7 @@ jobs:
     - name: Download Zip File
       run: |
         echo "Downloading zip file..."
-        curl -L -o thort.zip "https://drive.google.com/file/d/18vDVWlfDqPLJG0E2RodfzfMpDxT9ucYp/view?usp=drive_link"
+        curl -L -o thort.zip "https://drive.google.com/uc?export=download&id=18vDVWlfDqPLJG0E2RodfzfMpDxT9ucYp"
 
     - name: Extract Zip File
       run: |
