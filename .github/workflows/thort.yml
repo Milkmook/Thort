@@ -1,0 +1,35 @@
+name: thort
+
+on:
+  workflow_dispatch:
+
+jobs:
+  thort:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Upload Zip File
+      run: |
+        echo "Uploading zip file to the repository..."
+        # Simulate uploading the zip file (replace this with actual upload if needed)
+        mkdir -p temp_files
+        touch temp_files/thort.zip
+        echo "Zip file uploaded."
+
+    - name: Extract Zip File
+      run: |
+        echo "Extracting zip file..."
+        unzip temp_files/thort.zip -d extracted_files/
+        mv extracted_files/* .
+        rm -rf extracted_files temp_files/thort.zip
+
+    - name: Commit Extracted Files
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+        git add .
+        git commit -m "Extract and add files from zip"
+        git push origin thort
